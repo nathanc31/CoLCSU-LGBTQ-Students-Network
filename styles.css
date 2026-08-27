@@ -1,0 +1,338 @@
+/* ============================================================
+   GLOBAL FULL-WIDTH RESET
+   ============================================================ */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: #0f0f14;
+    color: #e5e7eb;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.7;
+    scroll-behavior: smooth;
+}
+
+/* ============================================================
+   FULL-WIDTH CONTAINER FIX
+   ============================================================ */
+main, section, nav, .header, footer {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+
+/* ============================================================
+   HEADER — DARK PRIDE
+   ============================================================ */
+.header {
+    padding: clamp(16px, 4vw, 32px);
+    background: linear-gradient(
+        135deg,
+        #1a1a1a,
+        #3a0a0a,
+        #7a2e00,
+        #7a6a00,
+        #0a5a2e,
+        #0a2e7a,
+        #3a1f4a
+    );
+    color: #fff;
+    text-align: center;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+nav {
+    background: #1a1a22;
+    border-bottom: 2px solid #b57edc;
+    padding: clamp(10px, 2vw, 20px);
+    display: flex;
+    gap: clamp(8px, 2vw, 16px);
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    font-weight: 600;
+    padding: clamp(6px, 1.5vw, 14px) clamp(10px, 2vw, 20px);
+    border-radius: 999px;
+    background: #1f1f27;
+    color: #e5e7eb;
+    text-decoration: none;
+    border: 2px solid #2a2a33;
+    transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+nav a:hover {
+    background: #262630;
+    border-color: #b57edc;
+}
+
+/* ============================================================
+   HAMBURGER MENU
+   ============================================================ */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.hamburger span {
+    width: 28px;
+    height: 3px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mobile only */
+@media (max-width: 600px) {
+
+    .hamburger {
+        display: flex;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav a {
+        display: none; /* hidden until menu opens */
+    }
+
+    nav.open a {
+        display: block; /* show when menu is open */
+    }
+}
+
+/* Hamburger animation */
+nav.open .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+nav.open .hamburger span:nth-child(2) {
+    opacity: 0;
+}
+
+nav.open .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ============================================================
+   SECTIONS (FULL-WIDTH CARDS)
+   ============================================================ */
+.section {
+    padding: clamp(18px, 4vw, 32px);
+    background: #1a1a22;
+    border-radius: clamp(10px, 2vw, 16px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(4%) scale(0.99);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* ============================================================
+   TITLES
+   ============================================================ */
+.section-title {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 700;
+    margin-bottom: clamp(12px, 2vw, 20px);
+    color: #b57edc;
+}
+
+/* ============================================================
+   PROFILE CARDS
+   ============================================================ */
+.profile-card {
+    display: flex;
+    align-items: center;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+
+.profile-icon {
+    width: 70px;
+    height: 70px;
+    background: #3a3a3a;
+    border-radius: 50%;
+    margin-right: 15px;
+    overflow: hidden;
+}
+
+.profile-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.profile-info p {
+    margin: 4px 0 0;
+    font-size: 15px;
+    color: #ccc;
+}
+
+/* ============================================================
+   FULL-WIDTH CALENDAR
+   ============================================================ */
+.fullwidth-calendar {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding: 0;
+}
+
+.fullwidth-calendar h2 {
+    margin: 20px 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    text-align: center;
+}
+
+.calendar-frame {
+    width: 100vw;
+    height: 90vh;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+footer {
+    padding: clamp(12px, 3vw, 25px);
+    background: #0a0a0f;
+    color: #cfcfd8;
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    margin-top: clamp(20px, 4vw, 40px);
+}
+
+/* ============================================================
+   MOBILE BREAKPOINTS
+   ============================================================ */
+@media (max-width: 600px) {
+
+    nav {
+        gap: 8px;
+        padding: 12px;
+        background: #0d0d12;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+    }
+
+    nav a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-icon {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .calendar-frame {
+        height: 85vh;
+    }
+
+    .fullwidth-calendar h2 {
+        margin: 16px;
+    }
+}
+.lsn-button {
+  --lsn-bg: #4c6fff;
+  --lsn-bg-hover: #3a57d6;
+  --lsn-glow: rgba(76, 111, 255, 0.6);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #4c6fff, #8b5cf6);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  position: relative;
+  isolation: isolate;
+  box-shadow: 0 0 0 0 var(--lsn-glow);
+  transition:
+    transform 180ms ease,
+    box-shadow 220ms ease,
+    background 220ms ease,
+    filter 220ms ease;
+}
+
+/* soft glow pulse on hover */
+.lsn-button::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.35), transparent 55%);
+  opacity: 0;
+  transition: opacity 220ms ease;
+  z-index: -1;
+}
+
+.lsn-button:hover {
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 25px -10px var(--lsn-glow);
+  filter: brightness(1.05);
+}
+
+.lsn-button:hover::before {
+  opacity: 1;
+}
+
+/* gentle press animation */
+.lsn-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px -6px var(--lsn-glow);
+}
+
+/* optional focus ring for accessibility */
+.lsn-button:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
