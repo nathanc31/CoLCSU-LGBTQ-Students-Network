@@ -1,6 +1,6 @@
 /* ============================================================
    MAIN INITIALISATION
-   ============================================================ */
+============================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -21,25 +21,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     animated.forEach(el => observer.observe(el));
 
-
     /* ------------------------------------------------------------
-       TIME‑RESTRICTED ACCESS FOR GAMES
+       TIME-RESTRICTED ACCESS FOR GAMES
     ------------------------------------------------------------ */
     checkAccessTime();
     setInterval(checkAccessTime, 60000);
-
 
     /* ------------------------------------------------------------
        MOBILE UI ENHANCEMENTS
     ------------------------------------------------------------ */
     applyMobileUI();
 
-
     /* ------------------------------------------------------------
        NAV SCROLL EFFECT
     ------------------------------------------------------------ */
     applyNavScrollEffect();
-
 
     /* ------------------------------------------------------------
        HAMBURGER MENU
@@ -52,14 +48,31 @@ document.addEventListener("DOMContentLoaded", () => {
             nav.classList.toggle("open");
         });
     }
+
+    /* ------------------------------------------------------------
+       SSN POPUP
+    ------------------------------------------------------------ */
+    const popup = document.getElementById("ssnPopup");
+
+    if (popup) {
+
+        if (localStorage.getItem("ssnRulesAccepted")) {
+            popup.style.display = "none";
+        } else {
+            popup.style.display = "flex";
+        }
+
+    }
+
 });
 
 
 /* ============================================================
-   TIME‑RESTRICTED ACCESS FOR GAMES
-   ============================================================ */
+   TIME-RESTRICTED ACCESS FOR GAMES
+============================================================ */
 
 function checkAccessTime() {
+
     const now = new Date();
     const hour = now.getHours();
     const minute = now.getMinutes();
@@ -80,54 +93,83 @@ function checkAccessTime() {
         games.style.display = "none";
         blocked.style.display = "block";
     }
+
 }
 
 
 /* ============================================================
    MOBILE UI ENHANCEMENTS
-   ============================================================ */
+============================================================ */
 
 function isMobileOrTablet() {
     return window.innerWidth <= 900;
 }
 
 function applyMobileUI() {
+
     if (!isMobileOrTablet()) return;
 
     document.body.classList.add("mobile-active");
 
     const nav = document.querySelector("nav");
-    if (nav) nav.classList.add("mobile-nav");
+
+    if (nav) {
+        nav.classList.add("mobile-nav");
+    }
 
     const sections = document.querySelectorAll(".section");
+
     sections.forEach(section => {
         section.classList.add("mobile-card");
     });
+
 }
 
 
 /* ============================================================
    NAV SCROLL EFFECT
-   ============================================================ */
+============================================================ */
 
 function applyNavScrollEffect() {
+
     const nav = document.querySelector("nav");
+
     if (!nav) return;
 
     window.addEventListener("scroll", () => {
+
         if (window.scrollY > 20) {
             nav.classList.add("nav-scrolled");
         } else {
             nav.classList.remove("nav-scrolled");
         }
+
     });
+
 }
 
 
 /* ============================================================
    RESPONSIVE REACTIVITY
-   ============================================================ */
+============================================================ */
 
 window.addEventListener("resize", () => {
     applyMobileUI();
 });
+
+
+/* ============================================================
+   POPUP CLOSE FUNCTION
+============================================================ */
+
+function closePopup() {
+
+    localStorage.setItem("ssnRulesAccepted", "true");
+
+    const popup = document.getElementById("ssnPopup");
+
+    if (popup) {
+        popup.style.display = "none";
+    }
+
+}
