@@ -29,6 +29,11 @@ main, section, nav, .header, footer {
     padding: clamp(16px, 4vw, 32px);
     background: linear-gradient(
         135deg,
+        #1a1a1a,
+        #3a0a0a,
+        #7a2e00,
+        #7a6a00,
+        #0a5a2e,
         #0a2e7a,
         #3a1f4a
     );
