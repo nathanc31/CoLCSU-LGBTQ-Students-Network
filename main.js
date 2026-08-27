@@ -52,11 +52,11 @@ document.addEventListener("DOMContentLoaded", () => {
     /* ------------------------------------------------------------
        SSN POPUP
     ------------------------------------------------------------ */
-    const popup = document.getElementById("ssnPopup");
+    const popup = document.getElementById("lsnPopup");
 
     if (popup) {
 
-        if (localStorage.getItem("ssnRulesAccepted")) {
+        if (localStorage.getItem("lsnRulesAccepted")) {
             popup.style.display = "none";
         } else {
             popup.style.display = "flex";
@@ -164,9 +164,9 @@ window.addEventListener("resize", () => {
 
 function closePopup() {
 
-    localStorage.setItem("ssnRulesAccepted", "true");
+    localStorage.setItem("lsnRulesAccepted", "true");
 
-    const popup = document.getElementById("ssnPopup");
+    const popup = document.getElementById("lsnPopup");
 
     if (popup) {
         popup.style.display = "none";
