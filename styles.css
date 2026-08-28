@@ -204,9 +204,8 @@ nav.open .hamburger span:nth-child(3) {
    FULL-WIDTH CALENDAR
    ============================================================ */
 .fullwidth-calendar {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
+    margin: 0;
     padding: 0;
 }
 
@@ -218,7 +217,7 @@ nav.open .hamburger span:nth-child(3) {
 }
 
 .calendar-frame {
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     border: none;
     margin: 0;
