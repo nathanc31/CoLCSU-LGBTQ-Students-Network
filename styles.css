@@ -366,3 +366,14 @@ footer {
     cursor: pointer;
     margin-top: 15px;
 }
+
+.colcsu-logo-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.colcsu-logo {
+    width: 180px;
+    height: auto;
+}
