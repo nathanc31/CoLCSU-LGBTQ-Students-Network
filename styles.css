@@ -164,6 +164,8 @@ nav.open .hamburger span:nth-child(3) {
    SECTIONS
    ============================================================ */
 .section {
+    max-width: clamp(320px, 90vw, 900px); /* dynamic width for mobile + desktop */
+    margin: 0 auto; /* centers the card */
     padding: var(--space-md);
     background: var(--bg-card);
     border-radius: var(--radius-md);
