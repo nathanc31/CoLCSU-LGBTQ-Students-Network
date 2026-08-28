@@ -2,7 +2,16 @@
    2026 GLOBAL SYSTEM — TOKENS & RESET
    ============================================================ */
 :root {
-    --bg-main: #0f0f14;
+    --bg-main: linear-gradient(
+    135deg,
+    #1a1a1a,
+    #3a0a0a,
+    #7a2e00,
+    #7a6a00,
+    #0a5a2e,
+    #0a2e7a,
+    #3a1f4a
+);
     --bg-card: #1a1a22;
     --bg-nav: #1a1a22;
     --bg-footer: #0a0a0f;
@@ -33,6 +42,7 @@ html, body {
     padding: 0;
     width: 100%;
     background: var(--bg-main);
+    background-attachment: fixed;
     color: var(--text-main);
     font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
     font-size: var(--font-base);
@@ -53,18 +63,6 @@ main, section, nav, .header, footer {
 /* ============================================================
    HEADER — DARK PRIDE
    ============================================================ */
-.header {
-    padding: var(--space-md);
-    background: linear-gradient(
-        135deg,
-        #1a1a1a,
-        #3a0a0a,
-        #7a2e00,
-        #7a6a00,
-        #0a5a2e,
-        #0a2e7a,
-        #3a1f4a
-    );
     color: #fff;
     text-align: center;
     font-size: var(--font-title);
