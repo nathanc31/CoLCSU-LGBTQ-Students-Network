@@ -17,9 +17,9 @@ html, body {
    FULL-WIDTH CONTAINER FIX
    ============================================================ */
 main, section, nav, .header, footer {
-    width: 100vw;
-    margin-left: calc(50% - 50vw);
-    margin-right: calc(50% - 50vw);
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 /* ============================================================
