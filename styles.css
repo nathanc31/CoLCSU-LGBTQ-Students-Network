@@ -438,3 +438,10 @@ footer {
         text-wrap: balance;
     }
 }
+
+.colcsu-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
