@@ -99,6 +99,9 @@ main, section, nav, .header, footer {
 /* ============================================================
    NAVIGATION
    ============================================================ */
+/* ============================================================
+   NAV — FIXED OVERLAY (ALWAYS VISIBLE)
+   ============================================================ */
 nav {
     background: var(--bg-nav);
     border-bottom: 2px solid var(--text-accent);
@@ -106,9 +109,19 @@ nav {
     display: flex;
     gap: var(--space-xs);
     flex-wrap: wrap;
-    position: static;
-    top: auto;
-    z-index: 1;
+
+    position: fixed;   /* stays visible at all times */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;      /* above all content */
+}
+
+/* ============================================================
+   BODY — SPACE BELOW FIXED NAV
+   ============================================================ */
+body {
+    padding-top: 70px; /* height of your nav bar */
 }
 
 nav a {
