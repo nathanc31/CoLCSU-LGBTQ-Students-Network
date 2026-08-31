@@ -252,21 +252,22 @@ nav.open .hamburger span:nth-child(3) {
 .profile-card {
     display: flex;
     align-items: center;
+    gap: 16px;
     background: #2a2a2a;
     border: 1px solid #3a3a3a;
     padding: var(--space-sm);
     border-radius: var(--radius-md);
     margin: 0 auto var(--space-sm);
     max-width: 600px;
-    text-align: left;
 }
 
 .profile-icon {
     width: 70px;
     height: 70px;
+    min-width: 70px;
+    flex-shrink: 0;
     background: #3a3a3a;
     border-radius: 50%;
-    margin-right: var(--space-sm);
     overflow: hidden;
 }
 
@@ -274,18 +275,27 @@ nav.open .hamburger span:nth-child(3) {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.profile-info {
+    flex: 1;
+    text-align: left;
 }
 
 .profile-info h3 {
-    margin: 0;
+    margin: 0 0 6px 0;
     font-size: 1.1rem;
+    font-weight: 700;
     color: #fff;
+    text-align: left;
 }
 
 .profile-info p {
-    margin: 4px 0 0;
+    margin: 0;
     font-size: 0.95rem;
     color: var(--text-muted);
+    text-align: left;
 }
 
 @media (max-width: 600px) {
@@ -294,9 +304,10 @@ nav.open .hamburger span:nth-child(3) {
         text-align: center;
     }
 
-    .profile-icon {
-        margin-right: 0;
-        margin-bottom: var(--space-xs);
+    .profile-info,
+    .profile-info h3,
+    .profile-info p {
+        text-align: center;
     }
 }
 
