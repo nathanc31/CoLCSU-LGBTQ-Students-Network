@@ -477,3 +477,15 @@ footer {
 .campus-group {
     margin-bottom: 2rem;
 }
+.vacancies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+}
+
+@media (max-width: 992px) {
+    .vacancies-grid {
+        grid-template-columns: 1fr;
+    }
+}
